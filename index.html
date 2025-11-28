@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>MXSEC – Website & Server Security by MXDEV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="MXSEC ist das All-in-One Sicherheitssystem von MXDEV für Websites & Server. Scans, Monitoring, Alerts & AutoFix – alles in einem Dashboard."
+  />
+
+  <!-- Google Font (optional, kannst du löschen falls du offline bleiben willst) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body>
+  <div class="page-bg-glow"></div>
+
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <span class="logo-icon">MX</span>
+        <span class="logo-text">
+          <strong>MXSEC</strong>
+          <small>by MXDEV</small>
+        </span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">Ablauf</a>
+        <a href="#pricing">Preise</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#" class="nav-link-secondary">Login</a>
+        <a href="#cta" class="btn btn-small btn-outline">Dashboard ansehen</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-pill">
+            🛡 All-in-One Security • Websites & Server
+          </div>
+          <h1>
+            MXSEC schützt deine
+            <span class="gradient-text">Websites & Server</span>
+            in Echtzeit.
+          </h1>
+          <p class="hero-subtitle">
+            Scans, Monitoring, Angriffs-Erkennung & AutoFix – in einem
+            übersichtlichen Dashboard. Entwickelt von MXDEV für Projekte, die
+            ernst genommen werden wollen.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#cta" class="btn btn-primary">
+              Jetzt kostenlos scannen
+            </a>
+            <a href="#how-it-works" class="btn btn-ghost">
+              Wie funktioniert MXSEC?
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span class="hero-meta-item">
+              ✅ Keine Installation im Browser nötig
+            </span>
+            <span class="hero-meta-item">
+              ✅ Ideal für Webdesigner, Firmen & Minecraft-Server
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span class="hero-card-title">Security Overview</span>
+              <span class="hero-card-tag">Live</span>
+            </div>
+            <div class="hero-score-wrapper">
+              <div class="hero-score-circle">
+                <span class="hero-score-value">92</span>
+                <span class="hero-score-label">Security Score</span>
+              </div>
+              <ul class="hero-score-list">
+                <li>
+                  <span class="dot dot-green"></span>
+                  <span>Website erreichbar</span>
+                  <span class="badge badge-good">OK</span>
+                </li>
+                <li>
+                  <span class="dot dot-green"></span>
+                  <span>SSL &amp; HSTS aktiv</span>
+                  <span class="badge badge-good">A</span>
+                </li>
+                <li>
+                  <span class="dot dot-yellow"></span>
+                  <span>Security Header</span>
+                  <span class="badge badge-warn">Optimierbar</span>
+                </li>
+                <li>
+                  <span class="dot dot-red"></span>
+                  <span>Offene Admin-Pfade</span>
+                  <span class="badge badge-bad">Gefahr</span>
+                </li>
+              </ul>
+            </div>
+            <div class="hero-card-footer">
+              <span>Nächster Auto-Scan: in 23 Minuten</span>
+              <button class="btn btn-tiny btn-outline">Details ansehen</button>
+            </div>
+          </div>
+
+          <div class="hero-subcard">
+            <span class="pill pill-soft">MXSEC AutoFix™</span>
+            <p>Firewall & SSH-Hardening können automatisch angewendet werden.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section" id="features">
+      <div class="container">
+        <header class="section-header">
+          <h2>Was MXSEC für dich übernimmt</h2>
+          <p>
+            Statt Logs und Konsole zu durchsuchen, bekommst du ein klares
+            Dashboard mit allem, was wichtig ist.
+          </p>
+        </header>
+
+        <div class="grid features-grid">
+          <article class="card feature-card">
+            <div class="card-icon">🌐</div>
+            <h3>Website Security Scan</h3>
+            <p>
+              Prüft deine Seite auf SQL Injection, XSS, schwache Headers,
+              unsichere Cookies, bekannte Lücken und mehr – inklusive Score von
+              0 bis 100.
+            </p>
+            <ul class="card-list">
+              <li>Security Score &amp; Prioritäten</li>
+              <li>Empfohlene Fixes in Klartext</li>
+              <li>Perfekt für Kunden-Reports</li>
+            </ul>
+          </article>
+
+          <article class="card feature-card">
+            <div class="card-icon">🖥️</div>
+            <h3>Server Monitoring</h3>
+            <p>
+              Überwacht SSH-Logins, Ressourcenauslastung, Ports und kritische
+              Änderungen. Ideal für Linux- und Minecraft-Server.
+            </p>
+            <ul class="card-list">
+              <li>Login-Versuche &amp; Bruteforce-Erkennung</li>
+              <li>CPU, RAM, Disk in Echtzeit</li>
+              <li>File-Change-Alerts</li>
+            </ul>
+          </article>
+
+          <article class="card feature-card">
+            <div class="card-icon">⚡</div>
+            <h3>MXSEC AutoFix™</h3>
+            <p>
+              Wichtige Sicherheitsmaßnahmen können automatisch gesetzt werden –
+              mit einem Klick aktivierst du Best Practices.
+            </p>
+            <ul class="card-list">
+              <li>Firewall-Regeln &amp; Fail2Ban</li>
+              <li>SSH-Hardening &amp; Root-Schutz</li>
+              <li>Webserver-Hardening (z.B. Nginx)</li>
+            </ul>
+          </article>
+
+          <article class="card feature-card">
+            <div class="card-icon">📊</div>
+            <h3>Reports & Alerts</h3>
+            <p>
+              Wöchentliche Reports, Live-Benachrichtigungen und klare
+              Zusammenfassungen für dich oder deine Kunden.
+            </p>
+            <ul class="card-list">
+              <li>Mail &amp; Discord Webhooks</li>
+              <li>PDF-Reports (Business &amp; Ultra)</li>
+              <li>Score-Verlauf über die Zeit</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section section-alt" id="how-it-works">
+      <div class="container">
+        <header class="section-header">
+          <h2>So funktioniert MXSEC in 3 Schritten</h2>
+          <p>Ohne komplizierte Einrichtung, ohne Security-Team.</p>
+        </header>
+
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Account erstellen</h3>
+            <p>
+              Registriere dich in wenigen Sekunden, logge dich ins MXSEC
+              Dashboard ein und wähle deinen Plan.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Websites & Server hinzufügen</h3>
+            <p>
+              Trage deine Domains ein und (optional) installierst du den
+              MXSEC-Agent auf deinen Servern.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>MXSEC übernimmt den Rest</h3>
+            <p>
+              Scans, Monitoring, Alerts &amp; AutoFix – du bekommst klare
+              Ergebnisse, statt unlesbare Logs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <header class="section-header">
+          <h2>Transparente Preise. Monatlich kündbar.</h2>
+          <p>Starte kostenlos und skaliere, wenn deine Projekte wachsen.</p>
+        </header>
+
+        <div class="pricing-grid">
+          <!-- Free -->
+          <article class="card pricing-card">
+            <h3>Free</h3>
+            <p class="pricing-price">0€ <span>/ Monat</span></p>
+            <p class="pricing-subtitle">Ideal zum Testen und Ausprobieren.</p>
+            <ul class="card-list">
+              <li>2 Website-Scans pro Monat</li>
+              <li>SSL-Check &amp; Basic-Header-Prüfung</li>
+              <li>Zugang zum MXSEC Dashboard</li>
+            </ul>
+            <a href="#cta" class="btn btn-outline block">Kostenlos starten</a>
+          </article>
+
+          <!-- Pro (Highlight) -->
+          <article class="card pricing-card pricing-card-featured">
+            <div class="pricing-badge">Beliebt</div>
+            <h3>Pro</h3>
+            <p class="pricing-price">14,99€ <span>/ Monat</span></p>
+            <p class="pricing-subtitle">
+              Für Webdesigner, Projekte &amp; Server-Owner.
+            </p>
+            <ul class="card-list">
+              <li>3 Websites + 1 Server</li>
+              <li>Tägliche Scans &amp; Monitoring</li>
+              <li>Discord &amp; Mail Alerts</li>
+              <li>Basic MXSEC AutoFix™</li>
+            </ul>
+            <a href="#cta" class="btn btn-primary block">
+              Pro aktivieren
+            </a>
+          </article>
+
+          <!-- Business -->
+          <article class="card pricing-card">
+            <h3>Business</h3>
+            <p class="pricing-price">29,99€ <span>/ Monat</span></p>
+            <p class="pricing-subtitle">
+              Für Agenturen &amp; Teams mit mehreren Projekten.
+            </p>
+            <ul class="card-list">
+              <li>10 Websites + 3 Server</li>
+              <li>Wöchentliche Reports &amp; PDF-Export</li>
+              <li>Erweiterte MXSEC AutoFix™ Optionen</li>
+              <li>API-Zugang</li>
+            </ul>
+            <a href="#cta" class="btn btn-outline block">
+              Business anfragen
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-alt" id="cta">
+      <div class="container">
+        <div class="cta-card">
+          <div class="cta-text">
+            <h2>Bereit zu sehen, wie unsicher deine Projekte wirklich sind?</h2>
+            <p>
+              Erstelle jetzt deinen kostenlosen MXSEC Account, füge deine erste
+              Website hinzu und erhalte in Sekunden einen Security Score.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a href="#" class="btn btn-primary block">Kostenlosen Scan starten</a>
+            <span class="cta-note">Keine Kreditkarte nötig. Jederzeit kündbar.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <header class="section-header">
+          <h2>Häufige Fragen</h2>
+          <p>Falls du später ein FAQ-Accordeon bauen willst, ist das hier die Grundlage.</p>
+        </header>
+
+        <div class="faq-grid">
+          <article class="faq-item">
+            <h3>Ist MXSEC nur für Firmen?</h3>
+            <p>
+              Nein. MXSEC ist für alle gedacht, die ernsthaft Projekte betreiben:
+              Freelancer, Agenturen, Hoster, Game-Server und natürlich Firmen.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Muss ich Software installieren?</h3>
+            <p>
+              Für Website-Scans reicht deine Domain. Der optionale Server-Agent
+              wird nur benötigt, wenn du tiefes Monitoring auf deinen Servern
+              möchtest.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Kann ich monatlich kündigen?</h3>
+            <p>
+              Ja. Alle MXSEC Pläne sind monatlich kündbar. Du zahlst nur, solange
+              du den Service nutzt.
+            </p>
+          </article>
+
+          <article class="faq-item">
+            <h3>Ist das auch für Minecraft-Server geeignet?</h3>
+            <p>
+              Ja. MXSEC ist perfekt für Linux-basierte Gameserver. SSH, Ports,
+              Logs &amp; Ressourcen werden überwacht und klar im Dashboard
+              dargestellt.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">MX</span>
+          <span class="logo-text">
+            <strong>MXSEC</strong>
+            <small>by MXDEV</small>
+          </span>
+        </div>
+        <p class="footer-text">
+          MXSEC ist das All-in-One Sicherheitssystem für Websites &amp; Server –
+          entwickelt von MXDEV.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h4>Produkt</h4>
+          <a href="#features">Features</a>
+          <a href="#pricing">Preise</a>
+          <a href="#faq">FAQ</a>
+        </div>
+        <div>
+          <h4>MXDEV</h4>
+          <a href="#">Website</a>
+          <a href="#">Kontakt</a>
+          <a href="#">Support</a>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>© <span id="year"></span> MXSEC / MXDEV. Alle Rechte vorbehalten.</span>
+        <span class="footer-bottom-meta">Security • Monitoring • AutoFix</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Jahr im Footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile Navigation
+    const navToggle = document.getElementById("navToggle");
+    const header = document.querySelector(".site-header");
+
+    navToggle.addEventListener("click", () => {
+      header.classList.toggle("nav-open");
+    });
+  </script>
+</body>
+</html>
