@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>MXSEC – Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body class="auth-body">
+  <div class="page-bg-glow"></div>
+
+  <div class="auth-shell">
+    <!-- Left / Brand -->
+    <div class="auth-brand">
+      <a href="index.html" class="logo auth-logo">
+        <span class="logo-icon">MX</span>
+        <span class="logo-text">
+          <strong>MXSEC</strong>
+          <small>by MXDEV</small>
+        </span>
+      </a>
+      <h1>Willkommen bei MXSEC</h1>
+      <p>
+        Logge dich in dein Dashboard ein und überwache Websites &amp; Server
+        in Echtzeit. Scans, Monitoring, Alerts &amp; AutoFix – alles an einem Ort.
+      </p>
+
+      <ul class="auth-benefits">
+        <li>🔐 Security Score &amp; Schwachstellen auf einen Blick</li>
+        <li>🖥️ Server- &amp; Website-Monitoring in Echtzeit</li>
+        <li>⚡ MXSEC AutoFix™ für schnelle Absicherung</li>
+      </ul>
+    </div>
+
+    <!-- Right / Auth Card -->
+    <div class="auth-panel">
+      <div class="card auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Login</button>
+          <button class="auth-tab" data-tab="register">Registrieren</button>
+        </div>
+
+        <!-- LOGIN FORM -->
+        <form class="auth-form" id="loginForm" action="dashboard.html" method="get">
+          <div class="auth-field">
+            <label for="login-email">E-Mail</label>
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <div class="auth-field">
+            <label for="login-password">Passwort</label>
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              placeholder="••••••••"
+              required
+            />
+          </div>
+
+          <div class="auth-extra-row">
+            <label class="auth-checkbox">
+              <input type="checkbox" name="remember" />
+              <span>Eingeloggt bleiben</span>
+            </label>
+            <a href="#" class="auth-link">Passwort vergessen?</a>
+          </div>
+
+          <button type="submit" class="btn btn-primary block">
+            Einloggen
+          </button>
+
+          <p class="auth-hint">
+            Noch kein Account?
+            <button type="button" class="auth-inline-link" data-switch="register">
+              Jetzt registrieren
+            </button>
+          </p>
+        </form>
+
+        <!-- REGISTER FORM -->
+        <form class="auth-form hidden" id="registerForm" action="dashboard.html" method="get">
+          <div class="auth-field">
+            <label for="reg-email">E-Mail</label>
+            <input
+              type="email"
+              id="reg-email"
+              name="email"
+              placeholder="you@example.com"
+              required
+            />
+          </div>
+
+          <div class="auth-field">
+            <label for="reg-password">Passwort</label>
+            <input
+              type="password"
+              id="reg-password"
+              name="password"
+              placeholder="Mindestens 8 Zeichen"
+              required
+            />
+          </div>
+
+          <div class="auth-field">
+            <label for="reg-confirm">Passwort bestätigen</label>
+            <input
+              type="password"
+              id="reg-confirm"
+              name="password_confirm"
+              placeholder="Noch einmal eingeben"
+              required
+            />
+          </div>
+
+          <div class="auth-field">
+            <label for="reg-plan">Plan auswählen</label>
+            <select id="reg-plan" name="plan">
+              <option value="free">Free – 0€ / Monat</option>
+              <option value="pro">Pro – 14,99€ / Monat</option>
+              <option value="business">Business – 29,99€ / Monat</option>
+            </select>
+          </div>
+
+          <div class="auth-extra-row">
+            <label class="auth-checkbox">
+              <input type="checkbox" required />
+              <span>Ich akzeptiere die AGB &amp; Datenschutz</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary block">
+            Account erstellen
+          </button>
+
+          <p class="auth-hint">
+            Schon einen Account?
+            <button type="button" class="auth-inline-link" data-switch="login">
+              Zum Login
+            </button>
+          </p>
+        </form>
+      </div>
+
+      <p class="auth-footnote">
+        Mit dem Fortfahren bestätigst du, dass du MXSEC nur auf Projekten nutzt, für die du
+        berechtigt bist, Sicherheitsprüfungen durchzuführen.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll(".auth-tab");
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+    const inlineSwitches = document.querySelectorAll(".auth-inline-link");
+
+    function setTab(tab) {
+      tabs.forEach((t) => t.classList.toggle("active", t.dataset.tab === tab));
+      if (tab === "login") {
+        loginForm.classList.remove("hidden");
+        registerForm.classList.add("hidden");
+      } else {
+        loginForm.classList.add("hidden");
+        registerForm.classList.remove("hidden");
+      }
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => setTab(tab.dataset.tab));
+    });
+
+    inlineSwitches.forEach((btn) => {
+      btn.addEventListener("click", () => setTab(btn.dataset.switch));
+    });
+  </script>
+</body>
+</html>
