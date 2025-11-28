@@ -62,7 +62,7 @@
       <div class="sidebar-footer">
         <div class="sidebar-plan">
           <span class="sidebar-plan-label">Plan</span>
-          <span class="sidebar-plan-name">Pro</span>
+          <span class="sidebar-plan-name" id="sidebar-plan-name">Pro</span>
         </div>
         <button class="btn btn-tiny btn-outline block">Plan upgraden</button>
       </div>
@@ -85,10 +85,10 @@
           </button>
           <div class="topbar-user">
             <div class="topbar-user-meta">
-              <span class="topbar-user-name">mxdev@example.de</span>
-              <span class="topbar-user-plan">Pro • 3 Websites, 1 Server</span>
+              <span class="topbar-user-name" id="topbar-user-email">mxdev@example.de</span>
+              <span class="topbar-user-plan" id="topbar-user-plan">Pro • 3 Websites, 1 Server</span>
             </div>
-            <div class="topbar-avatar">M</div>
+            <div class="topbar-avatar" id="topbar-avatar">M</div>
           </div>
         </div>
       </header>
@@ -101,47 +101,47 @@
             <div class="stat-label">Gesamt Security Score</div>
             <div class="stat-main">
               <div class="stat-score-circle">
-                <span class="stat-score-value">89</span>
+                <span class="stat-score-value" id="overall-score-value">–</span>
               </div>
               <div class="stat-score-meta">
-                <span class="stat-score-text">Gut gesichert</span>
-                <span class="stat-score-diff">+4 vs. letzte Woche</span>
+                <span class="stat-score-text" id="overall-score-text">Lädt…</span>
+                <span class="stat-score-diff" id="overall-score-diff">–</span>
               </div>
             </div>
-            <div class="stat-footer">
-              12 von 15 Checks bestehen. 3 empfohlene Maßnahmen ausstehend.
+            <div class="stat-footer" id="overall-score-note">
+              –
             </div>
           </article>
 
           <article class="card stat-card">
             <div class="stat-label">Angriffe (letzte 24h)</div>
             <div class="stat-value-row">
-              <span class="stat-value">432</span>
-              <span class="stat-chip stat-chip-warn">+18%</span>
+              <span class="stat-value" id="attacks-value">–</span>
+              <span class="stat-chip stat-chip-warn" id="attacks-change">–</span>
             </div>
-            <div class="stat-footer">
-              Meiste Versuche: SSH-Bruteforce auf <strong>mc-prod-01</strong>.
+            <div class="stat-footer" id="attacks-note">
+              –
             </div>
           </article>
 
           <article class="card stat-card">
             <div class="stat-label">Uptime</div>
             <div class="stat-value-row">
-              <span class="stat-value">99,96%</span>
-              <span class="stat-chip stat-chip-good">Stabil</span>
+              <span class="stat-value" id="uptime-value">–</span>
+              <span class="stat-chip stat-chip-good" id="uptime-chip">–</span>
             </div>
-            <div class="stat-footer">
-              1 kurzer Ausfall bei <strong>shop.mxdev.de</strong> (3 Minuten).
+            <div class="stat-footer" id="uptime-note">
+              –
             </div>
           </article>
 
           <article class="card stat-card">
             <div class="stat-label">Überwachte Ziele</div>
             <div class="stat-value-row">
-              <span class="stat-value">4</span>
+              <span class="stat-value" id="targets-value">–</span>
             </div>
-            <div class="stat-footer">
-              3 Websites, 1 Server. Grenze deines Pro-Plans.
+            <div class="stat-footer" id="targets-note">
+              –
             </div>
           </article>
         </section>
@@ -171,34 +171,10 @@
                     <th>Risiko</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="websites-tbody">
+                  <!-- wird per JS gefüllt -->
                   <tr>
-                    <td>mxdev.de</td>
-                    <td><span class="status-dot status-ok"></span> Online</td>
-                    <td><span class="score-badge score-high">93</span></td>
-                    <td>Heute • 12:41</td>
-                    <td>Gering</td>
-                  </tr>
-                  <tr>
-                    <td>shop.mxdev.de</td>
-                    <td><span class="status-dot status-ok"></span> Online</td>
-                    <td><span class="score-badge score-mid">81</span></td>
-                    <td>Heute • 11:03</td>
-                    <td>Mittel</td>
-                  </tr>
-                  <tr>
-                    <td>demo.mxsec.app</td>
-                    <td><span class="status-dot status-deg"></span> Erreichbar</td>
-                    <td><span class="score-badge score-low">67</span></td>
-                    <td>Gestern • 23:18</td>
-                    <td>Hoch</td>
-                  </tr>
-                  <tr>
-                    <td>kundenprojekt.de</td>
-                    <td><span class="status-dot status-off"></span> SSL Fehler</td>
-                    <td><span class="score-badge score-low">54</span></td>
-                    <td>Gestern • 08:42</td>
-                    <td>Kritisch</td>
+                    <td colspan="5">Lädt Websites…</td>
                   </tr>
                 </tbody>
               </table>
@@ -217,34 +193,14 @@
               <button class="btn btn-tiny btn-outline">Alle ansehen</button>
             </header>
 
-            <ul class="alerts-list">
-              <li class="alert-item alert-critical">
+            <ul class="alerts-list" id="alerts-list">
+              <!-- wird per JS gefüllt -->
+              <li class="alert-item">
                 <div class="alert-main">
-                  <div class="alert-title">Kritische Schwachstelle gefunden</div>
-                  <div class="alert-meta">kundenprojekt.de • vor 5 Minuten</div>
-                </div>
-                <span class="alert-tag">CVE</span>
-              </li>
-              <li class="alert-item alert-warn">
-                <div class="alert-main">
-                  <div class="alert-title">Mehrere fehlerhafte SSH Logins</div>
-                  <div class="alert-meta">mc-prod-01 • vor 12 Minuten</div>
-                </div>
-                <span class="alert-tag">SSH</span>
-              </li>
-              <li class="alert-item alert-info">
-                <div class="alert-main">
-                  <div class="alert-title">Neue Domain hinzugefügt</div>
-                  <div class="alert-meta">demo.mxsec.app • vor 34 Minuten</div>
+                  <div class="alert-title">Lädt Alerts…</div>
+                  <div class="alert-meta">Bitte kurz warten</div>
                 </div>
                 <span class="alert-tag">Info</span>
-              </li>
-              <li class="alert-item alert-info">
-                <div class="alert-main">
-                  <div class="alert-title">AutoFix angewendet (Firewall)</div>
-                  <div class="alert-meta">mc-prod-01 • vor 1 Stunde</div>
-                </div>
-                <span class="alert-tag">AutoFix</span>
               </li>
             </ul>
 
@@ -257,5 +213,259 @@
       </main>
     </div>
   </div>
+
+  <script>
+    // ======== Settings ========
+    // API Base URL – hier deine IP eintragen:
+    const API_BASE = "http://57.129.79.7:8000/api/v1";
+
+    async function fetchJSON(path) {
+      const res = await fetch(API_BASE + path);
+      if (!res.ok) {
+        throw new Error("API-Fehler " + res.status + " bei " + path);
+      }
+      return await res.json();
+    }
+
+    function timeAgo(dateString) {
+      const d = new Date(dateString);
+      if (isNaN(d)) return "";
+      const now = new Date();
+      const diffSec = Math.floor((now - d) / 1000);
+      if (diffSec < 60) return `vor ${diffSec} Sekunden`;
+      const diffMin = Math.floor(diffSec / 60);
+      if (diffMin < 60) return `vor ${diffMin} Minuten`;
+      const diffH = Math.floor(diffMin / 60);
+      if (diffH < 24) return `vor ${diffH} Stunden`;
+      const diffD = Math.floor(diffH / 24);
+      if (diffD === 1) return "vor 1 Tag";
+      return `vor ${diffD} Tagen`;
+    }
+
+    function mapStatus(status) {
+      switch (status) {
+        case "online":
+          return { label: "Online", cls: "status-ok" };
+        case "reachable":
+          return { label: "Erreichbar", cls: "status-deg" };
+        case "ssl_error":
+          return { label: "SSL Fehler", cls: "status-off" };
+        default:
+          return { label: status || "Unbekannt", cls: "status-deg" };
+      }
+    }
+
+    function mapRisk(risk) {
+      switch (risk) {
+        case "low": return "Gering";
+        case "medium": return "Mittel";
+        case "high": return "Hoch";
+        case "critical": return "Kritisch";
+        default: return "–";
+      }
+    }
+
+    function scoreClass(score) {
+      if (score === null || score === undefined) return "score-low";
+      if (score >= 85) return "score-high";
+      if (score >= 70) return "score-mid";
+      return "score-low";
+    }
+
+    function scoreText(score) {
+      if (score >= 90) return "Sehr gut gesichert";
+      if (score >= 75) return "Gut gesichert";
+      if (score >= 60) return "Verbesserbar";
+      return "Erhöhtes Risiko";
+    }
+
+    // ======== Overview laden ========
+    async function loadOverview() {
+      try {
+        const data = await fetchJSON("/overview");
+
+        const scoreEl = document.getElementById("overall-score-value");
+        const scoreTextEl = document.getElementById("overall-score-text");
+        const scoreDiffEl = document.getElementById("overall-score-diff");
+        const scoreNoteEl = document.getElementById("overall-score-note");
+
+        scoreEl.textContent = data.overall_score;
+        scoreTextEl.textContent = scoreText(data.overall_score);
+        scoreDiffEl.textContent =
+          (data.score_change >= 0 ? "+" : "") + data.score_change + " vs. letzte Woche";
+        scoreNoteEl.textContent =
+          `${data.targets_total} Ziele. ${data.targets_note}`;
+
+        document.getElementById("attacks-value").textContent = data.attacks_last_24h;
+        document.getElementById("attacks-change").textContent =
+          (data.attacks_change_percent >= 0 ? "+" : "") +
+          data.attacks_change_percent +
+          "%";
+        document.getElementById("attacks-note").textContent =
+          "Angriffe werden in Echtzeit aus Logs & Agenten gesammelt.";
+
+        document.getElementById("uptime-value").textContent =
+          data.uptime_percent.toFixed(2) + "%";
+        document.getElementById("uptime-chip").textContent =
+          data.uptime_percent >= 99.9 ? "Stabil" : "Auffällig";
+        document.getElementById("uptime-note").textContent = data.uptime_note;
+
+        document.getElementById("targets-value").textContent = data.targets_total;
+        document.getElementById("targets-note").textContent = data.targets_note;
+      } catch (err) {
+        console.error(err);
+        document.getElementById("overall-score-text").textContent =
+          "Fehler beim Laden der Übersicht";
+      }
+    }
+
+    // ======== Websites laden ========
+    async function loadWebsites() {
+      const tbody = document.getElementById("websites-tbody");
+      try {
+        const sites = await fetchJSON("/websites");
+        tbody.innerHTML = "";
+
+        if (!sites.length) {
+          const tr = document.createElement("tr");
+          const td = document.createElement("td");
+          td.colSpan = 5;
+          td.textContent = "Noch keine Websites hinzugefügt.";
+          tr.appendChild(td);
+          tbody.appendChild(tr);
+          return;
+        }
+
+        sites.forEach((site) => {
+          const tr = document.createElement("tr");
+
+          // Domain
+          const tdDomain = document.createElement("td");
+          tdDomain.textContent = site.domain;
+          tr.appendChild(tdDomain);
+
+          // Status
+          const tdStatus = document.createElement("td");
+          const statusInfo = mapStatus(site.status);
+          const dot = document.createElement("span");
+          dot.className = "status-dot " + statusInfo.cls;
+          tdStatus.appendChild(dot);
+          tdStatus.append(" " + statusInfo.label);
+          tr.appendChild(tdStatus);
+
+          // Score
+          const tdScore = document.createElement("td");
+          const spanScore = document.createElement("span");
+          spanScore.className = "score-badge " + scoreClass(site.last_score);
+          spanScore.textContent =
+            site.last_score !== null && site.last_score !== undefined
+              ? site.last_score
+              : "–";
+          tdScore.appendChild(spanScore);
+          tr.appendChild(tdScore);
+
+          // Letzter Scan
+          const tdScan = document.createElement("td");
+          if (site.last_scan_at) {
+            const date = new Date(site.last_scan_at);
+            tdScan.textContent = date.toLocaleString("de-DE");
+          } else {
+            tdScan.textContent = "Noch kein Scan";
+          }
+          tr.appendChild(tdScan);
+
+          // Risiko
+          const tdRisk = document.createElement("td");
+          tdRisk.textContent = mapRisk(site.risk_level);
+          tr.appendChild(tdRisk);
+
+          tbody.appendChild(tr);
+        });
+      } catch (err) {
+        console.error(err);
+        tbody.innerHTML = "";
+        const tr = document.createElement("tr");
+        const td = document.createElement("td");
+        td.colSpan = 5;
+        td.textContent = "Fehler beim Laden der Websites.";
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+      }
+    }
+
+    // ======== Alerts laden ========
+    async function loadAlerts() {
+      const list = document.getElementById("alerts-list");
+      try {
+        const alerts = await fetchJSON("/alerts?limit=10");
+        list.innerHTML = "";
+
+        if (!alerts.length) {
+          const li = document.createElement("li");
+          li.className = "alert-item alert-info";
+          li.innerHTML = `
+            <div class="alert-main">
+              <div class="alert-title">Keine Alerts</div>
+              <div class="alert-meta">Alles ruhig – keine neuen Meldungen.</div>
+            </div>
+            <span class="alert-tag">Info</span>
+          `;
+          list.appendChild(li);
+          return;
+        }
+
+        alerts.forEach((a) => {
+          const li = document.createElement("li");
+          let severityClass = "alert-info";
+          if (a.severity === "critical") severityClass = "alert-critical";
+          else if (a.severity === "warn") severityClass = "alert-warn";
+
+          li.className = "alert-item " + severityClass;
+          li.innerHTML = `
+            <div class="alert-main">
+              <div class="alert-title">${a.message}</div>
+              <div class="alert-meta">${a.target_label} • ${timeAgo(a.created_at)}</div>
+            </div>
+            <span class="alert-tag">${a.tag}</span>
+          `;
+          list.appendChild(li);
+        });
+      } catch (err) {
+        console.error(err);
+        list.innerHTML = `
+          <li class="alert-item alert-info">
+            <div class="alert-main">
+              <div class="alert-title">Fehler beim Laden der Alerts</div>
+              <div class="alert-meta">Bitte später erneut versuchen.</div>
+            </div>
+            <span class="alert-tag">Error</span>
+          </li>
+        `;
+      }
+    }
+
+    // ======== User / Plan (Fake, aber aus API möglich) ========
+    async function loadUser() {
+      try {
+        const user = await fetchJSON("/auth/me");
+        document.getElementById("topbar-user-email").textContent = user.email;
+        document.getElementById("sidebar-plan-name").textContent = user.plan.toUpperCase();
+        document.getElementById("topbar-user-plan").textContent =
+          user.plan.charAt(0).toUpperCase() + user.plan.slice(1) + " Plan";
+        const avatar = document.getElementById("topbar-avatar");
+        avatar.textContent = user.email.charAt(0).toUpperCase();
+      } catch (err) {
+        console.warn("Konnte User nicht laden (für MVP egal):", err);
+      }
+    }
+
+    // ======== Init ========
+    document.addEventListener("DOMContentLoaded", () => {
+      loadOverview();
+      loadWebsites();
+      loadAlerts();
+      loadUser();
+    });
+  </script>
 </body>
 </html>
