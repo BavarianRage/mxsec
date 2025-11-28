@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>MXSEC Dashboard – Übersicht</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- gleiche Fonts wie Landing Page -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="app-body">
+  <div class="page-bg-glow"></div>
+
+  <div class="app-shell">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="logo">
+          <span class="logo-icon">MX</span>
+          <span class="logo-text">
+            <strong>MXSEC</strong>
+            <small>Dashboard</small>
+          </span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-section-label">Übersicht</div>
+        <a href="#" class="sidebar-link active">
+          <span>Overview</span>
+          <span class="sidebar-pill">Live</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <span>Websites</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <span>Server</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <span>Alerts</span>
+        </a>
+
+        <div class="sidebar-section-label">Management</div>
+        <a href="#" class="sidebar-link">
+          <span>Reports</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <span>Billing</span>
+        </a>
+        <a href="#" class="sidebar-link">
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-plan">
+          <span class="sidebar-plan-label">Plan</span>
+          <span class="sidebar-plan-name">Pro</span>
+        </div>
+        <button class="btn btn-tiny btn-outline block">Plan upgraden</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <div class="app-main">
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="topbar-title">Security Overview</h1>
+          <p class="topbar-subtitle">
+            Live-Status deiner überwachten Websites &amp; Server.
+          </p>
+        </div>
+
+        <div class="topbar-right">
+          <button class="btn btn-small btn-ghost">
+            + Ziel hinzufügen
+          </button>
+          <div class="topbar-user">
+            <div class="topbar-user-meta">
+              <span class="topbar-user-name">mxdev@example.de</span>
+              <span class="topbar-user-plan">Pro • 3 Websites, 1 Server</span>
+            </div>
+            <div class="topbar-avatar">M</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="app-content">
+        <!-- STATS -->
+        <section class="stats-grid">
+          <article class="card stat-card stat-card-score">
+            <div class="stat-label">Gesamt Security Score</div>
+            <div class="stat-main">
+              <div class="stat-score-circle">
+                <span class="stat-score-value">89</span>
+              </div>
+              <div class="stat-score-meta">
+                <span class="stat-score-text">Gut gesichert</span>
+                <span class="stat-score-diff">+4 vs. letzte Woche</span>
+              </div>
+            </div>
+            <div class="stat-footer">
+              12 von 15 Checks bestehen. 3 empfohlene Maßnahmen ausstehend.
+            </div>
+          </article>
+
+          <article class="card stat-card">
+            <div class="stat-label">Angriffe (letzte 24h)</div>
+            <div class="stat-value-row">
+              <span class="stat-value">432</span>
+              <span class="stat-chip stat-chip-warn">+18%</span>
+            </div>
+            <div class="stat-footer">
+              Meiste Versuche: SSH-Bruteforce auf <strong>mc-prod-01</strong>.
+            </div>
+          </article>
+
+          <article class="card stat-card">
+            <div class="stat-label">Uptime</div>
+            <div class="stat-value-row">
+              <span class="stat-value">99,96%</span>
+              <span class="stat-chip stat-chip-good">Stabil</span>
+            </div>
+            <div class="stat-footer">
+              1 kurzer Ausfall bei <strong>shop.mxdev.de</strong> (3 Minuten).
+            </div>
+          </article>
+
+          <article class="card stat-card">
+            <div class="stat-label">Überwachte Ziele</div>
+            <div class="stat-value-row">
+              <span class="stat-value">4</span>
+            </div>
+            <div class="stat-footer">
+              3 Websites, 1 Server. Grenze deines Pro-Plans.
+            </div>
+          </article>
+        </section>
+
+        <!-- GRID: WEBSITES + ALERTS -->
+        <section class="layout-grid">
+          <!-- WEBSITES TABELLE -->
+          <article class="card table-card">
+            <header class="card-header">
+              <div>
+                <h2 class="card-title">Websites</h2>
+                <p class="card-subtitle">
+                  Status, letzter Scan &amp; Security Score.
+                </p>
+              </div>
+              <button class="btn btn-small btn-outline">Website hinzufügen</button>
+            </header>
+
+            <div class="table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Domain</th>
+                    <th>Status</th>
+                    <th>Score</th>
+                    <th>Letzter Scan</th>
+                    <th>Risiko</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>mxdev.de</td>
+                    <td><span class="status-dot status-ok"></span> Online</td>
+                    <td><span class="score-badge score-high">93</span></td>
+                    <td>Heute • 12:41</td>
+                    <td>Gering</td>
+                  </tr>
+                  <tr>
+                    <td>shop.mxdev.de</td>
+                    <td><span class="status-dot status-ok"></span> Online</td>
+                    <td><span class="score-badge score-mid">81</span></td>
+                    <td>Heute • 11:03</td>
+                    <td>Mittel</td>
+                  </tr>
+                  <tr>
+                    <td>demo.mxsec.app</td>
+                    <td><span class="status-dot status-deg"></span> Erreichbar</td>
+                    <td><span class="score-badge score-low">67</span></td>
+                    <td>Gestern • 23:18</td>
+                    <td>Hoch</td>
+                  </tr>
+                  <tr>
+                    <td>kundenprojekt.de</td>
+                    <td><span class="status-dot status-off"></span> SSL Fehler</td>
+                    <td><span class="score-badge score-low">54</span></td>
+                    <td>Gestern • 08:42</td>
+                    <td>Kritisch</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </article>
+
+          <!-- ALERTS -->
+          <article class="card alerts-card">
+            <header class="card-header">
+              <div>
+                <h2 class="card-title">Letzte Alerts</h2>
+                <p class="card-subtitle">
+                  Live-Benachrichtigungen aus Websites &amp; Servern.
+                </p>
+              </div>
+              <button class="btn btn-tiny btn-outline">Alle ansehen</button>
+            </header>
+
+            <ul class="alerts-list">
+              <li class="alert-item alert-critical">
+                <div class="alert-main">
+                  <div class="alert-title">Kritische Schwachstelle gefunden</div>
+                  <div class="alert-meta">kundenprojekt.de • vor 5 Minuten</div>
+                </div>
+                <span class="alert-tag">CVE</span>
+              </li>
+              <li class="alert-item alert-warn">
+                <div class="alert-main">
+                  <div class="alert-title">Mehrere fehlerhafte SSH Logins</div>
+                  <div class="alert-meta">mc-prod-01 • vor 12 Minuten</div>
+                </div>
+                <span class="alert-tag">SSH</span>
+              </li>
+              <li class="alert-item alert-info">
+                <div class="alert-main">
+                  <div class="alert-title">Neue Domain hinzugefügt</div>
+                  <div class="alert-meta">demo.mxsec.app • vor 34 Minuten</div>
+                </div>
+                <span class="alert-tag">Info</span>
+              </li>
+              <li class="alert-item alert-info">
+                <div class="alert-main">
+                  <div class="alert-title">AutoFix angewendet (Firewall)</div>
+                  <div class="alert-meta">mc-prod-01 • vor 1 Stunde</div>
+                </div>
+                <span class="alert-tag">AutoFix</span>
+              </li>
+            </ul>
+
+            <div class="alerts-footer">
+              Alerts werden in Echtzeit aktualisiert.  
+              <a href="#">Discord Webhook konfigurieren →</a>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
